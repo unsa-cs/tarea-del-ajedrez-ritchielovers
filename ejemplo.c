@@ -2,7 +2,9 @@
 #include "figures.h"
 
 void display() {
-  char **blackKnight = reverse(queen);
+  char **blackQueen = reverse(queen);
   char **blackPaw = reverse(pawn);
-  interpreter(blackKnight);
+  char **whitePaw = pawn;
+  interpreter(blackQueen);
+  repeatH(blackQueen,4);
 }
