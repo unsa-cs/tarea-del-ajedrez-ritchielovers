@@ -42,7 +42,7 @@ void interpreter(char **fig) {
 
   int j = 0;
   // Tamaño de las figuras
-  float pixel = 0.5;
+  float pixel = 0.211;
   while (fig[j]) {
     int i = 0;
     while (fig[j][i]) {
