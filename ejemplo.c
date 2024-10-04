@@ -1,7 +1,7 @@
 #include "chess.h"
 #include "figures.h"
 
-void display(){
-  char** blackKnight = reverse(knight);
+void display() {
+  char **blackKnight = reverse(queen);
   interpreter(blackKnight);
 }
