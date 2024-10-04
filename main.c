@@ -75,10 +75,11 @@ int main(int argc, char **argv) {
   glutInitWindowSize(1000, 1000); // window´s size
   glutCreateWindow("Chess");
 
-  glClearColor(0.0, 0.0, 1.00, 0.0);          // black background
-  glMatrixMode(GL_PROJECTION);                // setup viewing projection
-  glLoadIdentity();                           // start with identity matrix
-  glOrtho(0.0, 100.0, 100.0, 0.0, -1.0, 1.0); // setup a 100x100x2 viewing world
+  glClearColor(0.0, 0.0, 1.00, 0.0); // black background
+  glMatrixMode(GL_PROJECTION);       // setup viewing projection
+  glLoadIdentity();                  // start with identity matrix
+  glOrtho(200.0, 00.0, 0.0, 200.0, -1.0,
+          1.0); // setup a 100x100x2 viewing world
 
   glutDisplayFunc(display);
   glutMainLoop();
