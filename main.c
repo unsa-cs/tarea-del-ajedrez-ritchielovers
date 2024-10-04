@@ -31,7 +31,7 @@ void setColor(char c) {
     break; // dark gray
   default:
     glColor3f(0.0f, 1.0f, 0.0f);
-    break; // black
+    break; // green
   }
 }
 
@@ -71,11 +71,11 @@ int main(int argc, char **argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 
-  glutInitWindowPosition(100, 100); // origin on the window system
-  glutInitWindowSize(300, 300);     // window´s size
+  glutInitWindowPosition(0, 0);   // origin on the window system
+  glutInitWindowSize(1000, 1000); // window´s size
   glutCreateWindow("Chess");
 
-  glClearColor(0.5, 0.35, 0.05, 0.0);         // black background
+  glClearColor(0.0, 0.0, 1.00, 0.0);          // black background
   glMatrixMode(GL_PROJECTION);                // setup viewing projection
   glLoadIdentity();                           // start with identity matrix
   glOrtho(0.0, 100.0, 100.0, 0.0, -1.0, 1.0); // setup a 100x100x2 viewing world

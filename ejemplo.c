@@ -3,5 +3,6 @@
 
 void display() {
   char **blackKnight = reverse(queen);
+  char **blackPaw = reverse(pawn);
   interpreter(blackKnight);
 }
