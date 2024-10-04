@@ -1,4 +1,4 @@
 all: main.o 
-	g++ main.o chess.o $(HW).c -lglut -lGL -lGLU -w -o $(HW)
+	g++ main.o chess.o ejemplo.c -lglut -lGL -lGLU -w -o ejemplo
 main.o: main.c
 	g++ -c main.c
