@@ -6,5 +6,7 @@ void display() {
   char **blackPaw = reverse(pawn);
   char **whitePaw = pawn;
   char **queens = repeatV(blackQueen,8);
-  interpreter(queens);
+  char **whiteSquare_ = whiteSquare;
+  char **k = superImpose(knight, whiteSquare_);
+  interpreter(k);
 }
