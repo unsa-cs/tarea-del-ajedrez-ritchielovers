@@ -31,7 +31,7 @@ void setColor(char c) {
     break; // dark gray
   default:
     glColor3f(0.0f, 1.0f, 0.0f);
-    break; // green
+    break; // black
   }
 }
 
@@ -41,7 +41,6 @@ void interpreter(char **fig) {
   glBegin(GL_QUADS);            // Each set of 4 vertices form a quad
 
   int j = 0;
-  // Tamaño de las figuras
   float pixel = 0.211;
   while (fig[j]) {
     int i = 0;
@@ -49,14 +48,9 @@ void interpreter(char **fig) {
       setColor(fig[j][i]);
       float x = 1.0 + i * pixel;
       float y = 1.0 + j * pixel;
-      // Vertices de cada figura
-      // Izquierda superiot
       glVertex2f(x, y);
-      // Derecha superior
       glVertex2f(x + pixel, y);
-      // Derecha inferior
       glVertex2f(x + pixel, y + pixel);
-      // Izquierda inferior
       glVertex2f(x, y + pixel);
       i++;
     }
@@ -71,18 +65,18 @@ int main(int argc, char **argv) {
   glutInit(&argc, argv);
   glutInitDisplayMode(GLUT_SINGLE | GLUT_RGB | GLUT_DEPTH);
 
-  glutInitWindowPosition(0, 0);   // origin on the window system
-  glutInitWindowSize(1000, 1000); // window´s size
+  glutInitWindowPosition(100, 100); // origin on the window system
+  glutInitWindowSize(300, 300);     // window´s size
   glutCreateWindow("Chess");
 
-  glClearColor(1.0, 1.0, 1.0, 0.0); // black background
-  glMatrixMode(GL_PROJECTION);       // setup viewing projection
-  glLoadIdentity();                  // start with identity matrix
-  glOrtho(0.0, 100.0, 100.0, 0.0, -1.0,
-          1.0); // setup a 100x100x2 viewing world
+  glClearColor(0.5, 0.35, 0.05, 0.0);         // black background
+  glMatrixMode(GL_PROJECTION);                // setup viewing projection
+  glLoadIdentity();                           // start with identity matrix
+  glOrtho(0.0, 100.0, 100.0, 0.0, -1.0, 1.0); // setup a 100x100x2 viewing world
 
   glutDisplayFunc(display);
   glutMainLoop();
 
   return 0;
 }
+

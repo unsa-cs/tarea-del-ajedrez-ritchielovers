@@ -2,11 +2,10 @@
 #include "figures.h"
 
 void display() {
-  char **blackQueen = reverse(queen);
-  char **blackPaw = reverse(pawn);
-  char **whitePaw = pawn;
-  char **queens = repeatV(blackQueen,8);
-  char **whiteSquare_ = whiteSquare;
-  char **k = superImpose(knight, whiteSquare_);
-  interpreter(k);
+  char **_knight = knight;
+  char **_black_knight = reverse(_knight);
+  char **two_knight = join(_knight, _knight);
+  char **two_black_knight = join(_black_knight, _black_knight);
+  char **four_knight = join(two_knight, two_black_knight);
+  interpreter(four_knight);
 }
