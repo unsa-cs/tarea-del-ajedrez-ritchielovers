@@ -12,5 +12,6 @@ void display() {
   char **sixteen_knight = up(eight_knight, eight_knight);
   char **thirtytwo_knight = up(sixteen_knight, reverse(sixteen_knight));
   char **sixtyfour_knight = up(thirtytwo_knight, thirtytwo_knight);
-  interpreter(sixtyfour_knight);
+  char **rotatel_knight = rotateL(_knight);
+  interpreter(rotatel_knight);
 }
