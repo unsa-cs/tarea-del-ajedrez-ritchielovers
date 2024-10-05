@@ -2,11 +2,21 @@
 #include "figures.h"
 
 void display() {
-  
-  char **_spwhite = whiteSquare; //un casillero en blanco
-  char **_spblack = reverse(_spwhite); //un casillero en negro
-  char **two_block = join(_spwhite, _spblack); //se cambio de lugar para que ahora empieze con el casillero negro
-  char **fila = reverse(repeatH(two_block,4)); //se multiplica por 4 para que sean 8 casilleros
 
-  interpreter(fila);
+  char **_spwhite = whiteSquare;       // un casillero en blanco
+  char **_spblack = reverse(_spwhite); // un casillero en negro
+
+  // Unir casillero blanco y negro
+  char **two_block = join(_spwhite, _spblack);
+
+  // Repetir 4 veces la variable two_block
+  char **fila = repeatH(two_block, 4);
+
+  // Revertir la variable fila
+  char **reverse_fila = reverse(fila);
+
+  // Agregar una fila, en total 2
+  char **two_row = up(reverse_fila, fila);
+
+  interpreter(two_row);
 }
