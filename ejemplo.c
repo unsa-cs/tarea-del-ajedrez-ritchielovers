@@ -16,5 +16,6 @@ void display() {
   char **rotatel_knight = rotateL(_knight);
   */
   char **flipv_rotater_two_knight = rotateR(flipv_two_knight);
-  interpreter(flipv_rotater_two_knight);
+  char **repeath_flipv_rotater_two_knight = repeatH(flipv_rotater_two_knight, 8);
+  interpreter(repeath_flipv_rotater_two_knight);
 }
