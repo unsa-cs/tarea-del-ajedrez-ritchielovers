@@ -18,5 +18,8 @@ void display() {
   // Agregar una fila, en total 2
   char **two_row = up(reverse_fila, fila);
 
-  interpreter(two_row);
+  // Repetir la variable two_row dos veces, 4 filas
+  char **four_row = repeatV(two_row, 2);
+
+  interpreter(four_row);
 }
