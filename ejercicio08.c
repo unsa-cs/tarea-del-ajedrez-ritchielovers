@@ -28,6 +28,10 @@ void display(){
       }else{
         ficha=reverse(square);
       }
+      
+      if(eight_queens[i][j]==1){
+        ficha=superImpose(queen,ficha);
+      }
 
       if(j==0){
         row=ficha;
