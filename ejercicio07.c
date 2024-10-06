@@ -15,5 +15,6 @@ void display() {
   char **first_row_with_knight = join(left_mid, right_mid);
   char **first_two_rows = up(first_row_with_knight, fila);
   char **upper_mid_table = up(first_two_rows, two_fila);
-  interpreter(upper_mid_table);
+  char **lower_mid_table = rotateR(rotateR(upper_mid_table));
+  interpreter(lower_mid_table);
 }
