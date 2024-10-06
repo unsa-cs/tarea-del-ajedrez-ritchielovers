@@ -20,10 +20,18 @@ void display(){
       square=whiteSquare;
     }
     for(int j = 0 ;  j < 8 ; ++j){
-      if(j==0){
-        row=square;
-      } else{
-        row=join(row,square);
+      if(j%2==0){
+        if(j==0){
+          row=square;
+        }else{
+          row=join(row,square);
+        }
+      }else{
+        if(j==0){
+          row=reverse(square);
+        }else{
+          row=join(row,reverse(square));
+        }
       }
     }
     if(i==0){
