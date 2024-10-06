@@ -17,6 +17,9 @@ void display() {
   row_figures = join(row_figures, bishop);
   row_figures = join(row_figures, knight);
   row_figures = join(row_figures, rook);
+  
+  //se invierte los colores de las figuras en row_figures
+  row_figures = reverse(row_figures);
 
   //se superpone las figuras a los casilleros 
   char**result = superImpose(row_figures, fila);
