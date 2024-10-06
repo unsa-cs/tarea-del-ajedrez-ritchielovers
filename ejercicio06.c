@@ -20,13 +20,12 @@ void display() {
   row_figures = join(row_figures, rook);
 
   char **row_peones_blancos = repeatH(pawn,8);
+  
+  row_peones_blancos = superImpose(row_peones_blancos,fila_start_white);
   char **row_peones_negros = reverse(row_peones_blancos);
 
-  row_peones_blancos = superImpose(row_peones_blancos,fila_start_white);
-  row_peones_negros = superImpose(row_peones_negros, fila_start_black);
-
   char **row_whites = superImpose(row_figures, fila_start_black);
-  char **row_blacks = superImpose(reverse(row_figures), fila_start_white);
+  char **row_blacks = reverse(row_whites);
   
   char **conjunto_negras = up(row_peones_negros, row_blacks);
   char **conjunto_blancas = up(row_whites, row_peones_blancos);
