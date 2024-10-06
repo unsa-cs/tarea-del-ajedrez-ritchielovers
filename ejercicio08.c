@@ -13,6 +13,8 @@ void display(){
   char** square;
   char** row;
   char** chess_table;
+  char** ficha;
+
   for(int i = 0 ; i < 8 ; ++i){
     if(i%2==0){
       square=reverse(whiteSquare);
@@ -20,19 +22,19 @@ void display(){
       square=whiteSquare;
     }
     for(int j = 0 ;  j < 8 ; ++j){
+        
       if(j%2==0){
-        if(j==0){
-          row=square;
-        }else{
-          row=join(row,square);
-        }
+        ficha=square;
       }else{
-        if(j==0){
-          row=reverse(square);
-        }else{
-          row=join(row,reverse(square));
-        }
+        ficha=reverse(square);
       }
+
+      if(j==0){
+        row=ficha;
+      }else{
+        row=join(row,ficha);
+      }
+
     }
     if(i==0){
       chess_table=row;
@@ -40,5 +42,6 @@ void display(){
       chess_table=up(chess_table,row);
     }
   }
+
   interpreter(chess_table);
 }
