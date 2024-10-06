@@ -29,7 +29,8 @@ void display() {
   
   char **conjunto_negras = up(row_peones_negros, row_blacks);
   char **conjunto_blancas = up(row_whites, row_peones_blancos);
-  char **result = up(conjunto_blancas, conjunto_negras);
+  char **four_rows = repeatV(up(fila_start_black, fila_start_white), 2);
+  char **chess_table = up(up(conjunto_blancas, four_rows), conjunto_negras);
 
-  interpreter(result);
+  interpreter(chess_table);
 }
