@@ -3,16 +3,17 @@
 
 void display() {
   // 0 = tablero, vacio
-  // 1 = peon
-  // 2 = caballo
-  // 3 = alfil
-  // 4 = torre
-  // 5 = reina
-  // 6 = rey
-  int table[8][8] = {{4, 2, 3, 5, 6, 3, 2, 4}, {1, 1, 1, 1, 1, 1, 1, 1},
-                     {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0},
-                     {0, 0, 0, 0, 0, 0, 0, 0}, {0, 0, 0, 0, 0, 0, 0, 0},
-                     {1, 1, 1, 1, 1, 1, 1, 1}, {4, 2, 3, 5, 6, 3, 2, 4}};
+  // 1 = peon, -1 = peon negro
+  // 2 = caballo, -2  = caballo negro
+  // 3 = alfil, -3 = alfil negro
+  // 4 = torre, -4 = torre negro
+  // 5 = reina, -5 = reina negro
+  // 6 = rey, -6 = rey negro
+  int table[8][8] = {
+      {-4, -2, -3, -5, -6, -3, -2, -4}, {-1, -1, -1, -1, -1, -1, -1, -1},
+      {0, 0, 0, 0, 0, 0, 0, 0},         {0, 0, 0, 0, 0, 0, 0, 0},
+      {0, 0, 0, 0, 0, 0, 0, 0},         {0, 0, 0, 0, 0, 0, 0, 0},
+      {1, 1, 1, 1, 1, 1, 1, 1},         {4, 2, 3, 5, 6, 3, 2, 4}};
   char **fichas[6] = {pawn, knight, bishop, rook, queen, king};
   char **square;
   char **row;
@@ -32,7 +33,11 @@ void display() {
         ficha = reverse(square);
       }
 
-      ficha = superImpose(fichas[table[i][j] - 1], ficha);
+      if (table[i][j] < 0) {
+        ficha = superImpose(reverse(fichas[(table[i][j] * -1) - 1]), ficha);
+      } else {
+        ficha = superImpose(fichas[table[i][j] - 1], ficha);
+      }
 
       if (j == 0) {
         row = ficha;
