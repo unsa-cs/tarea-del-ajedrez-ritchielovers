@@ -13,5 +13,7 @@ void display() {
   char **spblack_beside_knight = join(_spblack, rotateL(reverse(knight_)));
   char **right_mid = join(reverse(two_block), spblack_beside_knight);
   char **first_row_with_knight = join(left_mid, right_mid);
-  interpreter(first_row_with_knight);
+  char **first_two_rows = up(first_row_with_knight, fila);
+  char **upper_mid_table = up(first_two_rows, two_fila);
+  interpreter(upper_mid_table);
 }
